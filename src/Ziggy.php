@@ -23,7 +23,7 @@ class Ziggy implements JsonSerializable
     {
         $this->group = $group;
 
-        $this->url = rtrim($url ?? url('/'), '/');
+        $this->url = rtrim($url ?? env('APP_URL'), '/');
 
         if (! static::$cache) {
             static::$cache = $this->nameKeyedRoutes();
